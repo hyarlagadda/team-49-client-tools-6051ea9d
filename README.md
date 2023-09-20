@@ -12,3 +12,6 @@ To run, 'make build', then 'make run'. LevelUpMain contains the main method for 
 
 
 
+# to run the project
+make 
+run
