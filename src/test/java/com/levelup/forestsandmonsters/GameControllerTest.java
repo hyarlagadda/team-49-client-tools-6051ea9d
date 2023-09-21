@@ -19,4 +19,7 @@ public class GameControllerTest {
         assertEquals(testObj.status.characterName, GameController.DEFAULT_CHARACTER_NAME);
     }
 
+    @Test
+    public void 
+
 }
