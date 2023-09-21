@@ -15,6 +15,9 @@ public void CreatePositions(){
 
 @Test
 public void IsPositionValid(){
+    GameMap  map= new GameMap();
+    Position pos1 = new Position(1, 8);
+     map.IsPositionValid(pos1);
     assertTrue(true);
 }
 
