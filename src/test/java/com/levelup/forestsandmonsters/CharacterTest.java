@@ -23,11 +23,35 @@ public class CharacterTest {
     }
 
     @Test
-    public void testMove() {
+    public void testMoveEast() {
         GameMap map = new GameMap();
         character.enterMap(map);
         character.move(DIRECTION.EAST);
-        assertTrue(true);
+        assertEquals(character.getCurrentPosition().coordinates.x, 1);
+    }
+
+    @Test
+    public void testMoveEN() {
+        GameMap map = new GameMap();
+        character.enterMap(map);
+        character.move(DIRECTION.EAST);
+        character.move(DIRECTION.NORTH);
+        assertEquals(character.getCurrentPosition().coordinates.x, 1);
+        assertEquals(character.getCurrentPosition().coordinates.y, 1);
+    }
+
+    @Test
+    public void testMoveENWEES() {
+        GameMap map = new GameMap();
+        character.enterMap(map);
+        character.move(DIRECTION.EAST); //(1,0)
+        character.move(DIRECTION.NORTH); //(1,1)
+        character.move(DIRECTION.WEST); //(0, 1)
+        character.move(DIRECTION.EAST); //(1, 1)
+        character.move(DIRECTION.EAST); //(2, 1)
+        character.move(DIRECTION.SOUTH); //(2, 0)
+        assertEquals(character.getCurrentPosition().coordinates.x, 2);
+        assertEquals(character.getCurrentPosition().coordinates.y, 0);
     }
 
     @Test

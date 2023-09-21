@@ -22,7 +22,6 @@ public class GameMap {
         startingPosition = positions[0][0];
     }
 
-
     public boolean IsPositionValid(Position pos) {
         if (pos.coordinates.x >= 0 && pos.coordinates.x < 10 && pos.coordinates.y >= 0 && pos.coordinates.y < 10) {
             return true;

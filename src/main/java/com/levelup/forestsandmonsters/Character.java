@@ -3,8 +3,9 @@ package com.levelup.forestsandmonsters;
 import java.awt.Point;
 
 import com.levelup.forestsandmonsters.GameController.DIRECTION;
+
 public class Character {
-    
+
     static String DEFAULT_NAME = "ELEPHANT";
     private String name;
     private GameMap gameMap;
@@ -37,31 +38,35 @@ public class Character {
     }
 
     public void move(DIRECTION direction) {
-        
+
+        Position position = currentPosition;
+
         switch (direction) {
             case NORTH:
-                Position position = new Position(this.getCurrentPosition().coordinates.x, 
-                    this.getCurrentPosition().coordinates.y + 1);
-                currentPosition = position;
+                position = new Position(this.getCurrentPosition().coordinates.x,
+                        this.getCurrentPosition().coordinates.y + 1);
                 break;
             case SOUTH:
-                Position position1 = new Position(this.getCurrentPosition().coordinates.x, 
-                this.getCurrentPosition().coordinates.y - 1);
-                currentPosition = position1;
+                position = new Position(this.getCurrentPosition().coordinates.x,
+                        this.getCurrentPosition().coordinates.y - 1);
                 break;
             case EAST:
-                Position position2 = new Position(this.getCurrentPosition().coordinates.x + 1, 
-                this.getCurrentPosition().coordinates.y);
-                currentPosition = position2;
+                position = new Position(this.getCurrentPosition().coordinates.x + 1,
+                        this.getCurrentPosition().coordinates.y);
                 break;
             case WEST:
-                Position position3 = new Position(this.getCurrentPosition().coordinates.x - 1, 
-                this.getCurrentPosition().coordinates.y);
-                currentPosition = position3;
+                position = new Position(this.getCurrentPosition().coordinates.x - 1,
+                        this.getCurrentPosition().coordinates.y);
                 break;
+            default:
+                break;
+
+        }
+
+        if (gameMap.IsPositionValid(position)) {
+            currentPosition = position;
         }
 
     }
 
-    
 }
