@@ -27,4 +27,12 @@ public class CharacterTest {
         character.move(DIRECTION.EAST);
         assertTrue(true);
     }
+
+    @Test
+    public void testEnterMap() {
+        GameMap map = new GameMap();
+        character.enterMap(map);
+        assertTrue(character.getCurrentPosition() != null);
+    }
+    
 }

@@ -10,6 +10,10 @@ public class Character {
     private GameMap gameMap;
     private Position currentPosition;
 
+    public Position getCurrentPosition() {
+        return currentPosition;
+    }
+
     public Character() {
         this.name = DEFAULT_NAME;
     }
@@ -35,4 +39,6 @@ public class Character {
     public void move(DIRECTION direction) {
         
     }
+
+    
 }
