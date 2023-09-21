@@ -34,5 +34,14 @@ public class CharacterTest {
         character.enterMap(map);
         assertTrue(character.getCurrentPosition() != null);
     }
-    
+
+    @Test
+    public void testEnterMapPosition() {
+        GameMap map = new GameMap();
+        character.enterMap(map);
+        Position position = character.getCurrentPosition();
+        assertEquals(position.coordinates.x, 0);
+        assertEquals(position.coordinates.y, 0);
+    }
+
 }
