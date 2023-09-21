@@ -40,12 +40,24 @@ public class Character {
         
         switch (direction) {
             case NORTH:
+                Position position = new Position(this.getCurrentPosition().coordinates.x, 
+                    this.getCurrentPosition().coordinates.y + 1);
+                currentPosition = position;
                 break;
             case SOUTH:
+                Position position1 = new Position(this.getCurrentPosition().coordinates.x, 
+                this.getCurrentPosition().coordinates.y - 1);
+                currentPosition = position1;
                 break;
             case EAST:
+                Position position2 = new Position(this.getCurrentPosition().coordinates.x + 1, 
+                this.getCurrentPosition().coordinates.y);
+                currentPosition = position2;
                 break;
             case WEST:
+                Position position3 = new Position(this.getCurrentPosition().coordinates.x - 1, 
+                this.getCurrentPosition().coordinates.y);
+                currentPosition = position3;
                 break;
         }
 
