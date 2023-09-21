@@ -7,6 +7,8 @@ public class Character {
     
     static String DEFAULT_NAME = "ELEPHANT";
     private String name;
+    private GameMap gameMap;
+    private Position currentPosition;
 
     public Character() {
         this.name = DEFAULT_NAME;
@@ -21,13 +23,13 @@ public class Character {
     }
 
     public void enterMap(GameMap map) {
-        GameMap gameMap = map;
-        
+        this.gameMap = map;
+        this.currentPosition = new Position(0, 0);
     }
 
     public Position getPosition() {
 
-        return null;
+        return currentPosition;
     }
 
     public void move(DIRECTION direction) {
