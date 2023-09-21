@@ -16,13 +16,13 @@ public class PositionTest {
     }
 
     @Test
-    public void tesXCoordinate() {
+    public void testXCoordinate() {
         Position position = new Position(8, 5);
         assertEquals(position.coordinates.x, 8);
     }
 
     @Test
-    public void tesYCoordinate() {
+    public void testYCoordinate() {
         Position position = new Position(8, 2);
         assertEquals(position.coordinates.y, 2);
     }
