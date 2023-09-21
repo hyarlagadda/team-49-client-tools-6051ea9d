@@ -20,9 +20,10 @@ public class Character {
         return name;
     }
 
-    // public void enterMap(GameMap map) {
-    
-    // }
+    public void enterMap(GameMap map) {
+        GameMap gameMap = map;
+        
+    }
 
     public Position getPosition() {
 
