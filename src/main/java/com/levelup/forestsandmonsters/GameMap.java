@@ -8,10 +8,10 @@ public class GameMap {
     int numPositions =100;
 
     public GameMap() {
-        CreatePositions();
+        createPositions();
     }
 
-    private void CreatePositions() {
+    private void createPositions() {
         positions = new Position[10][10];
         for (int x = 0; x < 10; x++) {
             for (int y = 0; y < 10; y++) {
@@ -22,7 +22,7 @@ public class GameMap {
         startingPosition = positions[0][0];
     }
 
-    public boolean IsPositionValid(Position pos) {
+    public boolean isPositionValid(Position pos) {
         if (pos.coordinates.x >= 0 && pos.coordinates.x < 10 && pos.coordinates.y >= 0 && pos.coordinates.y < 10) {
             return true;
         } else {

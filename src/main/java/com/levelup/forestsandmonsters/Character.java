@@ -63,7 +63,7 @@ public class Character {
 
         }
 
-        if (gameMap.IsPositionValid(position)) {
+        if (gameMap.isPositionValid(position)) {
             currentPosition = position;
         }
 
