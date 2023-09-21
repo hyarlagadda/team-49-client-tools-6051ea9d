@@ -1,5 +1,8 @@
 package com.levelup.forestsandmonsters;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.awt.Point;
 
 import org.junit.Test;
@@ -8,7 +11,19 @@ public class PositionTest {
     
     @Test
     public void testOriginPosition() {
-        Point position1 = new Point(5, 5);
-        System.out.println("Position: " + position1);
+        Position position = new Position(5, 5);
+        assertTrue(position.coordinates != null);
+    }
+
+    @Test
+    public void tesXCoordinate() {
+        Position position = new Position(8, 5);
+        assertEquals(position.coordinates.x, 8);
+    }
+
+    @Test
+    public void tesYCoordinate() {
+        Position position = new Position(8, 2);
+        assertEquals(position.coordinates.y, 2);
     }
 }
