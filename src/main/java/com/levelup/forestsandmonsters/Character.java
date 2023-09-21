@@ -38,6 +38,17 @@ public class Character {
 
     public void move(DIRECTION direction) {
         
+        switch (direction) {
+            case NORTH:
+                break;
+            case SOUTH:
+                break;
+            case EAST:
+                break;
+            case WEST:
+                break;
+        }
+
     }
 
     
