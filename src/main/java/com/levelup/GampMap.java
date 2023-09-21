@@ -1,15 +1,17 @@
 package com.levelup;
 
-import javax.swing.text.Position;
+import com.levelup.forestsandmonsters.Position;
 
 public class GampMap {
     
-    public Position positions;
+    public Position[] positions;
+    public Position startingPosition;
+
     int numPositions =100;
 
         public GameMap()
         {
-            //CreatePositions();
+            CreatePositions();
         }
 
         private void CreatePositions()
