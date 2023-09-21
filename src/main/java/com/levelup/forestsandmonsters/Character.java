@@ -24,10 +24,10 @@ public class Character {
     
     // }
 
-    // public Position getPosition() {
+    public Position getPosition() {
 
-    //     return null;
-    // }
+        return null;
+    }
 
     public void move(DIRECTION direction) {
         
