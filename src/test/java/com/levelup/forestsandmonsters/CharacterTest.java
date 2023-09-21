@@ -24,6 +24,8 @@ public class CharacterTest {
 
     @Test
     public void testMove() {
+        GameMap map = new GameMap();
+        character.enterMap(map);
         character.move(DIRECTION.EAST);
         assertTrue(true);
     }
