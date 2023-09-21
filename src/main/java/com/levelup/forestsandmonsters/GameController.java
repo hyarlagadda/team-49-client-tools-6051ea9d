@@ -15,6 +15,7 @@ public class GameController {
     }
 
     GameStatus status;
+    Character character;
 
     public GameController() {
         status = new GameStatus();
@@ -38,6 +39,11 @@ public class GameController {
     public void startGame() {
         // TODO: Implement startGame - Should probably create tiles and put the character
         // on them?
+        this.character = new Character(DEFAULT_CHARACTER_NAME);
+        GameMap map = new GameMap();
+        this.character.enterMap(map);
+        status.currentPosition = character.getCurrentPosition().coordinates;
+        status.moveCount = 0; 
         // TODO: Should also update the game results?
     }
 
@@ -47,6 +53,9 @@ public class GameController {
 
     public void move(DIRECTION directionToMove) {
         // TODO: Implement move - should call something on another class
+        character.move(directionToMove);
+        status.moveCount = status.moveCount + 1;
+        status.currentPosition = character.getCurrentPosition().coordinates;
         // TODO: Should probably also update the game results
     }
 
