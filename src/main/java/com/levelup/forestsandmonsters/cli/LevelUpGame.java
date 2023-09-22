@@ -44,6 +44,8 @@ public class LevelUpGame implements Quit.Command {
     // the character where their character is?
     System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
     System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
   }
 
   @ShellMethod(value = "Move North", key = { "N", "n" }, group = "Move")
@@ -76,6 +78,8 @@ public class LevelUpGame implements Quit.Command {
 
   @ShellMethod(value = "End the game", key = { "X", "x" })
   public void endGame() {
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
     System.out.println("You exit the mysterious world.");
     printSummary();
     System.exit(0);
