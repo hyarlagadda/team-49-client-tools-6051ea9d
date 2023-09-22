@@ -90,4 +90,12 @@ public class GameControllerTest {
         testObj.setCurrentMoveCount(23);
         assertEquals(testObj.getGameStatus().moveCount, 23);
     }
+
+    @Test
+    public void setCurrentMoveCount2() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.setCurrentMoveCount(-3);
+        assertEquals(testObj.getGameStatus().moveCount, 0);
+    }
 }
