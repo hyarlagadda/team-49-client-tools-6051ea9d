@@ -11,6 +11,10 @@ public class Character {
     private GameMap gameMap;
     private Position currentPosition;
 
+    public void setCurrentPosition(Position currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
     public Position getCurrentPosition() {
         return currentPosition;
     }

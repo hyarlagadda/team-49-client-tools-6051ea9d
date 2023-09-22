@@ -41,7 +41,7 @@ public class MoveSteps {
     public void theCharacterMoves() {
         testObj.setCharacterPosition(new Point(this.startX, this.startY));
         testObj.move(this.direction);
-        GameController.GameStatus status = testObj.getStatus();
+        GameController.GameStatus status = testObj.getGameStatus();
         this.currentPosition = status.currentPosition;
     }
 
@@ -59,7 +59,7 @@ public class MoveSteps {
 
     @Then("the new move count is {int}")
     public void checkMoveCount(int endingMoveCount) {
-        assertEquals(endingMoveCount, testObj.getStatus().moveCount);
+        assertEquals(endingMoveCount, testObj.getGameStatus().moveCount);
     }
 
 }

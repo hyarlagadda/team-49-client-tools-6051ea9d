@@ -14,11 +14,12 @@ public class GameController {
         public int moveCount = -100;
     }
 
-    GameStatus status;
+    GameStatus gameStatus;
     Character character;
 
     public GameController() {
-        status = new GameStatus();
+        gameStatus = new GameStatus();
+        character = new Character(DEFAULT_CHARACTER_NAME);
     }
 
     // TODO: Ensure this AND CLI commands match domain model
@@ -30,37 +31,37 @@ public class GameController {
     // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
         if (name != null && !name.equals("")) {
-            status.characterName = name;
+            gameStatus.characterName = name;
         } else {
-            status.characterName = DEFAULT_CHARACTER_NAME;
+            gameStatus.characterName = DEFAULT_CHARACTER_NAME;
         }
     }
 
     public void startGame() {
         // TODO: Implement startGame - Should probably create tiles and put the character
         // on them?
-        this.character = new Character(DEFAULT_CHARACTER_NAME);
         GameMap map = new GameMap();
         this.character.enterMap(map);
-        status.currentPosition = character.getCurrentPosition().coordinates;
-        status.moveCount = 0; 
+        gameStatus.currentPosition = character.getCurrentPosition().coordinates;
+        gameStatus.moveCount = 0; 
         // TODO: Should also update the game results?
     }
 
-    public GameStatus getStatus() {
-        return this.status;
+    public GameStatus getGameStatus() {
+        return this.gameStatus;
     }
 
     public void move(DIRECTION directionToMove) {
         // TODO: Implement move - should call something on another class
         character.move(directionToMove);
-        status.moveCount = status.moveCount + 1;
-        status.currentPosition = character.getCurrentPosition().coordinates;
+        gameStatus.moveCount = gameStatus.moveCount + 1;
+        gameStatus.currentPosition = character.getCurrentPosition().coordinates;
         // TODO: Should probably also update the game results
     }
 
     public void setCharacterPosition(Point coordinates) {
         // TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
+        this.character.setCurrentPosition(new Position(coordinates.x, coordinates.y));
     }
 
     public void setCurrentMoveCount(int moveCount) {

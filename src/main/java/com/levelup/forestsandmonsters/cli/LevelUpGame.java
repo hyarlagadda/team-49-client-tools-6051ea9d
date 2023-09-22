@@ -30,7 +30,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethod(value = "Create a character (characterName)", key = { "create-character", "create" })
   public void createCharacter(@ShellOption(defaultValue = "Character") String characterName) {
     gameController.createCharacter(characterName);
-    GameStatus status = gameController.getStatus();
+    GameStatus status = gameController.getGameStatus();
 
     System.out.println("Your character, " + status.characterName + " is created!");
   }
@@ -50,28 +50,28 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveNorth() {
     gameController.move(GameController.DIRECTION.NORTH);
-    updateStatus(gameController.getStatus());
+    updateStatus(gameController.getGameStatus());
   }
 
   @ShellMethod(value = "Move South", key = { "S", "s" }, group = "Move")
   @ShellMethodAvailability("startedCheck")
   public void moveSouth() {
     gameController.move(GameController.DIRECTION.SOUTH);
-    updateStatus(gameController.getStatus());
+    updateStatus(gameController.getGameStatus());
   }
 
   @ShellMethod(value = "Move East", key = { "E", "e" }, group = "Move")
   @ShellMethodAvailability("startedCheck")
   public void moveEast() {
     gameController.move(GameController.DIRECTION.EAST);
-    updateStatus(gameController.getStatus());
+    updateStatus(gameController.getGameStatus());
   }
 
   @ShellMethod(value = "Move West", key = { "W", "w" }, group = "Move")
   @ShellMethodAvailability("startedCheck")
   public void moveWest() {
     gameController.move(GameController.DIRECTION.WEST);
-    updateStatus(gameController.getStatus());
+    updateStatus(gameController.getGameStatus());
   }
 
   @ShellMethod(value = "End the game", key = { "X", "x" })

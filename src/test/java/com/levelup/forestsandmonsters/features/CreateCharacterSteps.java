@@ -25,7 +25,7 @@ public class CreateCharacterSteps {
 
     @Then("the Game sets the character name to {string}")
     public void thenTheGameSetsTheCharactersName(String expectedName) {
-        assertEquals(expectedName, gc.getStatus().characterName);
+        assertEquals(expectedName, gc.getGameStatus().characterName);
     }
 
 }
