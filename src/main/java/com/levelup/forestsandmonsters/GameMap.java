@@ -24,8 +24,8 @@ public class GameMap {
     }
 
 
-    public boolean IsPositionValid(Position pos) {
-        if (pos.coordinates.x >= 0 && pos.coordinates.x < 10 && pos.coordinates.y >= 0 && pos.coordinates.y < 10) {
+    public boolean isPositionValid(Position pos) {
+        if (pos.coordinates.x >= 0 && pos.coordinates.x < maxBoundary && pos.coordinates.y >= 0 && pos.coordinates.y < maxBoundary) {
             return true;
         } else {
             return false;
