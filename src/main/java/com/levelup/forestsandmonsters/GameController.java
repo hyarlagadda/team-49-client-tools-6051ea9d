@@ -7,10 +7,8 @@ public class GameController {
     static final String DEFAULT_CHARACTER_NAME = "Character";
 
     public class GameStatus {
-        // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
         public Point currentPosition = null;
-        // TODO: Write a failing unit test that will force you to set this to the right number
         public int moveCount = -100;
     }
 
@@ -60,7 +58,9 @@ public class GameController {
     }
 
     public void setCurrentMoveCount(int moveCount) {
-        this.gameStatus.moveCount = moveCount;        
+        if (moveCount >= 0) {
+            this.gameStatus.moveCount = moveCount;
+        }        
     }
 
     public int getTotalPositions() {
