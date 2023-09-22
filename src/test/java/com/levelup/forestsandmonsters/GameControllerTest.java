@@ -68,4 +68,26 @@ public class GameControllerTest {
         assertEquals(testObj.getGameStatus().currentPosition, new Point(0, 0));
     }
 
+    @Test
+    public void getTotalPositions() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.setCharacterPosition(null);
+        assertEquals(testObj.character.getGameMap().numPositions, 100);
+    }
+
+    @Test
+    public void setCurrentMoveCount() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        assertEquals(testObj.getGameStatus().moveCount, 0);
+    }
+
+    @Test
+    public void setCurrentMoveCount1() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.setCurrentMoveCount(23);
+        assertEquals(testObj.getGameStatus().moveCount, 23);
+    }
 }

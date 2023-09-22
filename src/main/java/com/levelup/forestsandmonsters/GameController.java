@@ -22,13 +22,11 @@ public class GameController {
         character = new Character(DEFAULT_CHARACTER_NAME);
     }
 
-    // TODO: Ensure this AND CLI commands match domain model
     public static enum DIRECTION {
         NORTH, SOUTH, EAST, WEST
     }
 
     // Pre-implemented to demonstrate ATDD
-    // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
         if (name != null && !name.equals("")) {
             gameStatus.characterName = name;
@@ -62,14 +60,11 @@ public class GameController {
     }
 
     public void setCurrentMoveCount(int moveCount) {
-        // TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
-        
+        this.gameStatus.moveCount = moveCount;        
     }
 
     public int getTotalPositions() {
-        // TODO: IMPLEMENT THIS TO GET THE TOTAL POSITIONS FROM THE MAP -- exists to be
-        // testable
-        return -10;
+        return this.character.getGameMap().numPositions;
     }
 
 }

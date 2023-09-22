@@ -1,13 +1,19 @@
 package com.levelup.forestsandmonsters;
 
-import java.awt.Point;
-
 import com.levelup.forestsandmonsters.GameController.DIRECTION;
 
 public class Character {
 
     static String DEFAULT_NAME = "ELEPHANT";
     private String name;
+    public GameMap getGameMap() {
+        return gameMap;
+    }
+
+    public void setGameMap(GameMap gameMap) {
+        this.gameMap = gameMap;
+    }
+
     private GameMap gameMap;
     private Position currentPosition;
 
