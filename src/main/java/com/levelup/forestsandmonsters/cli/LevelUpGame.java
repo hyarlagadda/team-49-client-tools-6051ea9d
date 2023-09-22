@@ -44,8 +44,7 @@ public class LevelUpGame implements Quit.Command {
     // the character where their character is?
     System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
     System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+    System.out.println(printCurrentPosition());
   }
 
   @ShellMethod(value = "Move North", key = { "N", "n" }, group = "Move")
@@ -53,9 +52,7 @@ public class LevelUpGame implements Quit.Command {
   public void moveNorth() {
     gameController.move(GameController.DIRECTION.NORTH);
     updateStatus(gameController.getGameStatus());
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
-
+    System.out.println(printCurrentPosition());
   }
 
   @ShellMethod(value = "Move South", key = { "S", "s" }, group = "Move")
@@ -63,9 +60,7 @@ public class LevelUpGame implements Quit.Command {
   public void moveSouth() {
     gameController.move(GameController.DIRECTION.SOUTH);
     updateStatus(gameController.getGameStatus());
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
-
+    System.out.println(printCurrentPosition());
   }
 
   @ShellMethod(value = "Move East", key = { "E", "e" }, group = "Move")
@@ -73,9 +68,7 @@ public class LevelUpGame implements Quit.Command {
   public void moveEast() {
     gameController.move(GameController.DIRECTION.EAST);
     updateStatus(gameController.getGameStatus());
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
-
+    System.out.println(printCurrentPosition());
   }
 
   @ShellMethod(value = "Move West", key = { "W", "w" }, group = "Move")
@@ -83,15 +76,12 @@ public class LevelUpGame implements Quit.Command {
   public void moveWest() {
     gameController.move(GameController.DIRECTION.WEST);
     updateStatus(gameController.getGameStatus());
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
-
+    System.out.println(printCurrentPosition());
   }
 
   @ShellMethod(value = "End the game", key = { "X", "x" })
   public void endGame() {
-    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
-    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+    System.out.println(printCurrentPosition());
     System.out.println("You exit the mysterious world.");
     printSummary();
     System.exit(0);
@@ -103,7 +93,15 @@ public class LevelUpGame implements Quit.Command {
       // TODO: Override toString on game status to print pretty
       System.out.println(status);
     }
-    // TODO: Print anything else you committed to in your mockup
+    //TODO: Print anything else you committed to in your mockup
+  }
+
+  private String printCurrentPosition() {
+
+    StringBuffer buffer = new StringBuffer("Your current position: (").append(Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue())
+    .append(",").append(Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+    
+    return buffer.toString();
   }
 
   private void updateStatus(GameStatus status) {
