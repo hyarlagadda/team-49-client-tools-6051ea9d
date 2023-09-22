@@ -41,27 +41,31 @@ public class GameControllerTest {
         testObj.move(DIRECTION.NORTH);
         assertEquals(testObj.character.getCurrentPosition().coordinates, 
             new Point(1,2));
-        assertEquals(testObj.gameStatus.moveCount, 0);
+        assertEquals(testObj.gameStatus.moveCount, 3);
     }
 
     @Test
     public void move2() {
         GameController testObj = new GameController();
         testObj.startGame();;
-        testObj.move(DIRECTION.EAST);
-        testObj.move(DIRECTION.NORTH);
-        testObj.move(DIRECTION.NORTH);
-        testObj.move(DIRECTION.NORTH);
-        testObj.move(DIRECTION.SOUTH);
-        testObj.move(DIRECTION.WEST);
-        testObj.move(DIRECTION.WEST);                
+        testObj.move(DIRECTION.EAST); //1, 0
+        testObj.move(DIRECTION.NORTH); //1, 1
+        testObj.move(DIRECTION.NORTH); //1, 2
+        testObj.move(DIRECTION.NORTH); //1, 3
+        testObj.move(DIRECTION.SOUTH); //1, 2
+        testObj.move(DIRECTION.SOUTH); //1, 1
+        testObj.move(DIRECTION.WEST); //0, 1
+        testObj.move(DIRECTION.WEST); //0, 1               
         assertEquals(testObj.character.getCurrentPosition().coordinates, 
-            new Point(0,2));
+            new Point(0,1));
     }
 
     @Test
     public void setCharacterPosition() {
-        
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.setCharacterPosition(null);
+        assertEquals(testObj.getGameStatus().currentPosition, new Point(0, 0));
     }
 
 }

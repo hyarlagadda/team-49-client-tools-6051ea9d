@@ -61,11 +61,14 @@ public class GameController {
 
     public void setCharacterPosition(Point coordinates) {
         // TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
-        this.character.setCurrentPosition(new Position(coordinates.x, coordinates.y));
+        if (coordinates != null) {
+            this.character.setCurrentPosition(new Position(coordinates.x, coordinates.y));
+        }
     }
 
     public void setCurrentMoveCount(int moveCount) {
         // TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
+        
     }
 
     public int getTotalPositions() {
