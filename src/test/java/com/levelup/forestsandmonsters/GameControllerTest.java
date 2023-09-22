@@ -35,12 +35,13 @@ public class GameControllerTest {
     @Test
     public void move() {
         GameController testObj = new GameController();
-        testObj.startGame();;
+        testObj.startGame();
         testObj.move(DIRECTION.EAST);
         testObj.move(DIRECTION.NORTH);
         testObj.move(DIRECTION.NORTH);
         assertEquals(testObj.character.getCurrentPosition().coordinates, 
             new Point(1,2));
+        assertEquals(testObj.gameStatus.moveCount, 0);
     }
 
     @Test
