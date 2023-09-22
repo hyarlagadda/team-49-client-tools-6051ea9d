@@ -53,6 +53,9 @@ public class LevelUpGame implements Quit.Command {
   public void moveNorth() {
     gameController.move(GameController.DIRECTION.NORTH);
     updateStatus(gameController.getGameStatus());
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+
   }
 
   @ShellMethod(value = "Move South", key = { "S", "s" }, group = "Move")
@@ -60,6 +63,9 @@ public class LevelUpGame implements Quit.Command {
   public void moveSouth() {
     gameController.move(GameController.DIRECTION.SOUTH);
     updateStatus(gameController.getGameStatus());
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+
   }
 
   @ShellMethod(value = "Move East", key = { "E", "e" }, group = "Move")
@@ -67,6 +73,9 @@ public class LevelUpGame implements Quit.Command {
   public void moveEast() {
     gameController.move(GameController.DIRECTION.EAST);
     updateStatus(gameController.getGameStatus());
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+
   }
 
   @ShellMethod(value = "Move West", key = { "W", "w" }, group = "Move")
@@ -74,6 +83,9 @@ public class LevelUpGame implements Quit.Command {
   public void moveWest() {
     gameController.move(GameController.DIRECTION.WEST);
     updateStatus(gameController.getGameStatus());
+    System.out.println("Your current position: (" + Double.valueOf(gameController.getGameStatus().currentPosition.getX()).intValue() + "," 
+    +  Double.valueOf(gameController.getGameStatus().currentPosition.getY()).intValue() + ")");
+
   }
 
   @ShellMethod(value = "End the game", key = { "X", "x" })
