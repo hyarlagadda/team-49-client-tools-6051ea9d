@@ -38,13 +38,10 @@ public class GameController {
     }
 
     public void startGame() {
-        // TODO: Implement startGame - Should probably create tiles and put the character
-        // on them?
         GameMap map = new GameMap();
         this.character.enterMap(map);
         gameStatus.currentPosition = character.getCurrentPosition().coordinates;
         gameStatus.moveCount = 0; 
-        // TODO: Should also update the game results?
     }
 
     public GameStatus getGameStatus() {
@@ -52,15 +49,13 @@ public class GameController {
     }
 
     public void move(DIRECTION directionToMove) {
-        // TODO: Implement move - should call something on another class
         character.move(directionToMove);
         gameStatus.moveCount = gameStatus.moveCount + 1;
         gameStatus.currentPosition = character.getCurrentPosition().coordinates;
-        // TODO: Should probably also update the game results
     }
 
     public void setCharacterPosition(Point coordinates) {
-        // TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
+
         if (coordinates != null) {
             this.character.setCurrentPosition(new Position(coordinates.x, coordinates.y));
         }
